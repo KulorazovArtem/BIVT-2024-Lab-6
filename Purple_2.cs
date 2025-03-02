@@ -49,7 +49,7 @@ namespace Lab_6
                 _distance = distance;
                 if (marks == null) return;
                 int sm = 0;
-                int mn = 8;
+                int mn = int.MaxValue;
                 int mx = 0;
                 for (int i = 0; i < marks.Length; i++)
                 {
@@ -60,7 +60,7 @@ namespace Lab_6
                         mx = marks[i];
                     sm += marks[i];
                 }
-                _result = sm - mn - mx + 60 + (_distance - 120) * 2;
+                _result = Math.Max(0, sm - mn - mx + 60 + (_distance - 120) * 2);
                 
             }
             public static void Sort(Participant[] array)

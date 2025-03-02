@@ -69,7 +69,7 @@ namespace Lab_6
                 int s = 0;
                 foreach (Response response in responses)
                 {
-                    if (response._answers[questionNumber] != null)
+                    if (response._answers[questionNumber - 1] != null)
                         s++;
                 }
                 return s;
