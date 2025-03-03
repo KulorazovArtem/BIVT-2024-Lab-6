@@ -65,11 +65,11 @@ namespace Lab_6
 
             public int CountVotes(Response[] responses, int questionNumber)
             {
-                if (responses == null) return 0;
+                if (responses == null || questionNumber > 3 || questionNumber < 1) return 0;
                 int s = 0;
                 foreach (Response response in responses)
                 {
-                    if (response._answers[questionNumber - 1] == _answers[questionNumber - 1])
+                    if (response._answers[questionNumber - 1] != null && response._answers[questionNumber - 1] != "" && response._answers[questionNumber - 1] == _answers[questionNumber - 1])
                         s++;
                 }
                 return s;
